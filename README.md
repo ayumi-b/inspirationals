@@ -41,12 +41,13 @@ Usage Example:
 > ./inspirationals manage
 
 outputs 
-> 1. Add a Dr. Phil quote
-> 2. Add a Tiger Mom quote
-> 3. List all Dr. Phil quotes 
-> 4. List all Tiger Mom quotes
-> 5. Exit
-
+```
+1. Add a Dr. Phil quote
+2. Add a Tiger Mom quote
+3. List all Dr. Phil quotes 
+4. List all Tiger Mom quotes
+5. Exit
+```
 user input:
 > 2
 

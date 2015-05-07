@@ -23,6 +23,7 @@ In order to receive the appropriate wisdom for my given state, I want to take a 
 ### Viewing All Existing Quotes
 
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
+
 Usage Example:
 > ./inspirationals manage
 ```

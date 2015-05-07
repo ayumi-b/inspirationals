@@ -13,12 +13,23 @@ In order to receive wisdom from the chosen thought leader, I want to see the adv
 
 ### Taking the Quotes Questionnaire  
 In order to receive the appropriate wisdom for my given state, I want to take a quick survey that can accurately gauge my specific need for inspiration.
+
+Usage Example:
 > ./inspirationals
 ```
 1. I want to be inspired by Dr. Phil.
 2. I want to be inspired by Tiger Mom.
 ```
-
+> 1
+```
+Select an inspiration that you need.
+1. Comfort
+2. Support
+3. Security
+4. A way out of a situation
+5. Decision
+6. Challenge
+```
 
 ### Viewing All Existing Quotes
 

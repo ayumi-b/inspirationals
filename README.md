@@ -39,26 +39,33 @@ In order to be able to enter new inspirations by our wisdom leaders, I want to a
 
 Usage Example:
 > ./inspirationals manage
+
 outputs 
 > 1. Add a Dr. Phil quote
 > 2. Add a Tiger Mom quote
 > 3. List all Dr. Phil quotes 
 > 4. List all Tiger Mom quotes
 > 5. Exit
+
 user input:
 > 2
+
 outputs
->Please type in your 'Tiger Mom' quote.
+> Please type in your 'Tiger Mom' quote.
+
 user input:
 > Go practice piano.
+
 outputs
 > Go practice piano.
 > Would you like to?
 > 1. Add
 > 2. Edit
 > 3. Exit
+
 user input:
 > 1
+
 outputs
 > "Go practice piano." has been added.
 > 1. Add a Dr. Phil quote

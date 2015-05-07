@@ -22,13 +22,13 @@ In order to receive the appropriate wisdom for my given state, I want to take a 
 
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 Usage Example:
-  > ./inspirationals manage
+> ./inspirationals manage
   1. Add a Dr. Phil quote
   2. Add a Tiger Mom quote
   3. List all Dr. Phil quotes 
   4. List all Tiger Mom quotes
   5. Exit
-  > 3
+> 3
   1. You're only lonely if you're not there for you.
   2. It's hard to see your own face without a mirror.
   3. Awareness without action is worthless.
@@ -38,27 +38,34 @@ Usage Example:
 In order to be able to enter new inspirations by our wisdom leaders, I want to add the latest and greatest quotes.
 
 Usage Example:
-  > ./inspirationals manage
-  1. Add a Dr. Phil quote
-  2. Add a Tiger Mom quote
-  3. List all Dr. Phil quotes 
-  4. List all Tiger Mom quotes
-  5. Exit
-  > 2
-  Please type in your 'Tiger Mom' quote.
-  > Go practice piano.
-  Go practice piano.
-  Would you like to?
-  1. Add
-  2. Edit
-  3. Exit
-  > 1
-  "Go practice piano." has been added.
-  1. Add a Dr. Phil quote
-  2. Add a Tiger Mom quote
-  3. List all Dr. Phil quotes 
-  4. List all Tiger Mom quotes
-  5. Exit
+> ./inspirationals manage
+outputs 
+> 1. Add a Dr. Phil quote
+> 2. Add a Tiger Mom quote
+> 3. List all Dr. Phil quotes 
+> 4. List all Tiger Mom quotes
+> 5. Exit
+user input:
+> 2
+outputs
+>Please type in your 'Tiger Mom' quote.
+user input:
+> Go practice piano.
+outputs
+> Go practice piano.
+> Would you like to?
+> 1. Add
+> 2. Edit
+> 3. Exit
+user input:
+> 1
+outputs
+> "Go practice piano." has been added.
+> 1. Add a Dr. Phil quote
+> 2. Add a Tiger Mom quote
+> 3. List all Dr. Phil quotes 
+> 4. List all Tiger Mom quotes
+> 5. Exit
 
 ### Editing an Existing Quote
 

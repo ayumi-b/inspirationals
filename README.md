@@ -1,5 +1,5 @@
 # inspirationals
-Ruby Command Line Capstone Project
+Ruby Command Line CRUD Application---Capstone Project
 
 ## Project Vision
 This will be a small command-line program that allows the user to generate an 'inspiring' quote from his/her command line, either in the style of Dr. Phil or 'Tiger Mom'.
@@ -31,7 +31,7 @@ Select an inspiration that you need.
 6. Challenge
 ```
 
-### Viewing All Existing Quotes
+### Viewing All Existing Quotes (R)
 
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 
@@ -55,7 +55,7 @@ Acceptance Criteria:
 * All quotes are printed out.
 * Each quote is given a number, which does not correspond to its database id.
 
-### Adding a New Quote
+### Adding a New Quote (C)
 In order to be able to enter new inspirations by our wisdom leaders, I want to add the latest and greatest quotes.
 
 Usage Example:
@@ -89,10 +89,10 @@ Would you like to?
 5. Exit
 ```
 
-### Editing an Existing Quote
+### Editing an Existing Quote (U)
 In order to fix any inaccuracies with the quotes, I want to edit an existing quote.
 
-### Deleting a Quote
+### Deleting a Quote (D)
 In order to remove duplicates and/or quotes that aren't illuminating, I want to delete an existing quote.
 
 Usage Example:

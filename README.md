@@ -35,7 +35,7 @@ If you want more, you have to require more from yourself.
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 
 Usage Example:
-```
+
 > ./inspirationals manage
 ```
   1. Add a Dr. Phil quote
@@ -50,7 +50,7 @@ Usage Example:
   2. It's hard to see your own face without a mirror.
   3. Awareness without action is worthless.
 ```
-```
+
 
 Acceptance Criteria:
 * All quotes are printed out.
@@ -152,6 +152,7 @@ Usage Example:
   4. List all Tiger Mom quotes
   5. Exit
 ```
+
 Acceptance Criteria:
 * Program prints out confirmation that the quote was edited.
 * The edited quote is updated on the database.

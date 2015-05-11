@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+require 'highline/import'
+
+menu_prompt =<<EOS
+1. Add a Dr. Phil quote
+2. Add a Tiger Mom quote
+3. List all Dr. Phil quotes
+4. List all Tiger Mom quotes
+5. Exit
+EOS
+
+if ARGV.length < 1
+  print "[Help] Run as: ./inspirationals manage"
+elsif ARGV.length == 1
+  if ARGV[0] != 'manage'
+    print "[Help] Run as: ./inspirationals manage"
+  else
+    choose do |menu|
+      menu.prompt = ""
+      
+      menu.choice('Add a Dr. Phil quote') {say("")}
+      menu.choice('Add a Tiger Mom quote') {say("")}
+      menu.choice('List all Dr. Phil quotes') {say("")}
+      menu.choice('List all Tiger Mom quotes') {say("")}
+      menu.choice('Exit') { say("Tomorrow's just a future yesterday.\n")}
+    end
+  end
+end
+
+

@@ -39,6 +39,7 @@ If you want more, you have to require more from yourself.
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 
 Usage Example:
+```
 > ./inspirationals manage
 ```
   1. Add a Dr. Phil quote
@@ -52,6 +53,7 @@ Usage Example:
   1. You're only lonely if you're not there for you.
   2. It's hard to see your own face without a mirror.
   3. Awareness without action is worthless.
+```
 ```
 
 Acceptance Criteria:

@@ -17,10 +17,10 @@ elsif ARGV.length == 1
   else
     choose do |menu|
       menu.prompt = ""
-      
+
       menu.choice('Add a Dr. Phil quote') {say("")}
       menu.choice('Add a Tiger Mom quote') {say("")}
-      menu.choice('List all Dr. Phil quotes') {say("")}
+      menu.choice('List all Dr. Phil quotes') {say("No quotes by Dr. Phil. Please add one.\n")}
       menu.choice('List all Tiger Mom quotes') {say("")}
       menu.choice('Exit') { say("Tomorrow's just a future yesterday.\n")}
     end

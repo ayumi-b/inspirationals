@@ -1,16 +1,13 @@
 # inspirationals
 Ruby Command Line CRUD Application---Capstone Project
-
 ## Project Vision
 This will be a small command-line program that allows the user to generate an 'inspiring' quote from his/her command line, either in the style of Dr. Phil or 'Tiger Mom'.
 
 Users will be able to add/edit/delete quotes, as well as ask for a type of inspiration they seek depending on their mood.  After choosing their inspirational figure (Dr. Phil or Tiger Mom) and the mood that needs inspiration, the user is given a quote that is most fitting to their need.
 
 ## Features
-
 ### Viewing Chosen Quote  (R)
 In order to receive wisdom from the chosen thought leader, I want to see the advice that was chosen. (See usage example under 'Taking the Quotes Questionnaire')
-
 ### Taking the Quotes Questionnaire 
 In order to receive the appropriate wisdom for my given state, I want to take a quick survey that can accurately gauge my specific need for inspiration.
 
@@ -34,7 +31,6 @@ Select an inspiration that you need.
 ```
 If you want more, you have to require more from yourself.
 ```
-
 ### Viewing All Existing Quotes (R)
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 

@@ -106,6 +106,61 @@ Acceptance Criteria:
 ### Editing an Existing Quote (U)
 In order to fix any inaccuracies with the quotes, I want to edit an existing quote.
 
+Usage Example:
+> ./inspirationals manage
+```
+  1. Add a Dr. Phil quote
+  2. Add a Tiger Mom quote
+  3. List all Dr. Phil quotes
+  4. List all Tiger Mom quotes
+  5. Exit
+```
+  > 4
+```
+  1. PhD doesn't come with professional certification.
+  2. Just work harder.
+  3. Would you like to become a doctor, or be homeless?
+  Which inspirational would you like to access?
+```
+  > 2
+```
+  Would you like to become a doctor, or be homeless?
+  Would you like to?
+  1. Edit
+  2. Delete
+  3. Exit
+```
+  > 1
+```
+  Please edit the quote to your liking.
+```
+  > Become a doctor, or be homeless.
+```
+  "Become a doctor, or be homeless." is now edited. Is this correct?
+  1. Yes
+  2. No; I'd like to edit.
+```
+  > 1
+```
+  Is the category "Career Advice" correct?
+  1. Yes
+  2. No; I'd like to edit.
+```
+  > 1
+```
+  1. Add a Dr. Phil quote
+  2. Add a Tiger Mom quote
+  3. List all Dr. Phil quotes
+  4. List all Tiger Mom quotes
+  5. Exit
+```
+Acceptance Criteria:
+* Program prints out confirmation that the quote was edited.
+* The edited quote is updated on the database.
+* All references to the edited quote are updated from the database.
+* After the edit confirmation, the user is taken back to the main manage menu.
+
+
 ### Deleting a Quote (D)
 In order to remove duplicates and/or quotes that aren't illuminating, I want to delete an existing quote.
 
@@ -123,6 +178,7 @@ Usage Example:
   1. You're only lonely if you're not there for you.
   2. It's hard to see your own face without a mirror.
   3. Awareness without action is worthless.
+  Which inspirational would you like to access?
 ```
   > 2
 ```

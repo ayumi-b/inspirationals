@@ -31,6 +31,7 @@ Select an inspiration that you need.
 ```
 If you want more, you have to require more from yourself.
 ```
+
 ### Viewing All Existing Quotes (R)
 In order to evaluate and manage my inventory of inspirationals, I want to see the current inventory of quotes.
 

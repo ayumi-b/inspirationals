@@ -9,22 +9,18 @@ menu_prompt =<<EOS
 5. Exit
 EOS
 
-if ARGV.length < 1
-  print "[Help] Run as: ./inspirationals manage"
-elsif ARGV.length == 1
-  if ARGV[0] != 'manage'
-    print "[Help] Run as: ./inspirationals manage"
-  else
+if ARGV.size == 1 and ARGV[0] == "manage"
     choose do |menu|
       menu.prompt = ""
 
       menu.choice('Add a Dr. Phil quote') {say("")}
       menu.choice('Add a Tiger Mom quote') {say("")}
       menu.choice('List all Dr. Phil quotes') {say("No quotes by Dr. Phil. Please add one.\n")}
-      menu.choice('List all Tiger Mom quotes') {say("")}
+      menu.choice('List all Tiger Mom quotes') {say("No quotes by Tiger Mom. Please add one.\n")}
       menu.choice('Exit') { say("Tomorrow's just a future yesterday.\n")}
     end
-  end
+else
+  puts "[Help] Run as: ./inspirationals manage"
 end
 
 

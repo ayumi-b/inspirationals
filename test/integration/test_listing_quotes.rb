@@ -8,7 +8,7 @@ class TestListingQuotes < Minitest::Test
     IO.popen('./inspirationals manage', 'r+') do |pipe|
       expected_output << manage_menu
       pipe.puts "3"
-      expected_output << "No quotes found. Add a quote.\n"
+      expected_output << "there are no quotes found. Add a quote.\n"
       pipe.close_write
       shell_output = pipe.read
     end

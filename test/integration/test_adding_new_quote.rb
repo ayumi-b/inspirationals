@@ -40,5 +40,24 @@ require_relative '../test_helper'
 
 class AddingNewQuoteTest < Minitest::Test
 
+  def test_adding_a_quote
+    shell_output = ""
+    expected_output = manage_menu
+    test_quote = "Cats are great"
+    IO.popen('./inspirationals manage', 'r+') do |pipe|
+      pipe.puts "2"
+      expected_output << "Please type in your Tiger Mom quote.\n"
+      pipe.puts test_quote
+      expected_output << "\"#{test_quote}\" has been added.\n"
+      expected_output << manage_menu
+      pipe.puts "5"
+      expected_output << "Tomorrow's just a future yesterday.\n"
+      shell_output = pipe.read
+      pipe.close_write
+      pipe.close_read
+    end
+    assert_equal expected_output, shell_output
+  end
+
 
 end

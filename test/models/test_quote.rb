@@ -23,7 +23,7 @@ describe Quote do
       end
     end
   end
- 
+
   describe "#count" do
     describe "if there are no quotes in the database" do
       it "should return 0" do
@@ -39,6 +39,21 @@ describe Quote do
     it "should return the correct count" do
       assert_equal 3, Quote.count
     end
+   end
+  end
+
+  describe "#create" do
+    describe "if we need to add quotes" do
+      it "should add a quote" do
+        Quote.create("Best or none.")
+        assert_equal 1, Quote.count
+      end
+
+      it "should reject empty strings" do
+        assert_raises(ArgumentError) { Quote.create("") }
+      end
     end
   end
+
+
 end

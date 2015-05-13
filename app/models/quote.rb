@@ -13,4 +13,11 @@ class Quote
     Database.execute("select count(id) from quotes")[0][0]
   end
 
+  def self.create(name)
+    if name.empty?
+      raise ArgumentError.new
+    else
+      Database.execute("INSERT INTO quotes (name) VALUES (?)", name)
+    end
+  end
 end

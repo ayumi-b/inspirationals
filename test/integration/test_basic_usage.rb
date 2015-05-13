@@ -12,10 +12,10 @@ class TestBasicUsage < Minitest::Test
     assert_equal expected_output, shell_output
   end
 
-  def test_manage_argument_not_given
+  def test_manage_multiple_arguments_given
     shell_output = ""
     expected_output = ""
-    IO.popen('./inspirationals cats') do |pipe|
+    IO.popen('./inspirationals manage cats') do |pipe|
       expected_output = "[Help] Run as: ./inspirationals manage\n"
       shell_output = pipe.read
     end
@@ -26,13 +26,7 @@ class TestBasicUsage < Minitest::Test
     shell_output = ""
     expected_output = ""
     IO.popen('./inspirationals manage', 'r+') do |pipe|
-      expected_output =<<EOS
-1. Add a Dr. Phil quote
-2. Add a Tiger Mom quote
-3. List all Dr. Phil quotes
-4. List all Tiger Mom quotes
-5. Exit
-EOS
+      expected_output << manage_menu
       pipe.puts "5"
       expected_output << "Tomorrow's just a future yesterday.\n"
       pipe.close_write

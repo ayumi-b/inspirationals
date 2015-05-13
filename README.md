@@ -4,6 +4,9 @@ Ruby Command Line CRUD Application---Capstone Project
 This will be a small command-line program that allows the user to generate an 'inspiring' quote from his/her command line, either in the style of Dr. Phil or 'Tiger Mom'.
 
 Users will be able to add/edit/delete quotes, as well as ask for a type of inspiration they seek depending on their mood.  After choosing their inspirational figure (Dr. Phil or Tiger Mom) and the mood that needs inspiration, the user is given a quote that is most fitting to their need.
+## Usage
+* Run rake bootstrap_database to setup your local database
+* Then, ./inspirationals manage to manage the list of scenarios
 
 ## Features
 ### Viewing Chosen Quote  (R)
@@ -41,7 +44,7 @@ Usage Example:
 ```
   1. Add a Dr. Phil quote
   2. Add a Tiger Mom quote
-  3. List all Dr. Phil quotes 
+  3. List all Dr. Phil quotes
   4. List all Tiger Mom quotes
   5. Exit
 ```

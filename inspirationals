@@ -14,20 +14,20 @@ menu_prompt =<<EOS
 EOS
 
 if ARGV.size == 1 and ARGV[0] == "manage"
-  loop do  
-  choose do |menu|
+  loop do
+    choose do |menu|
       menu.prompt = ""
 
       quotes_controller = QuotesController.new
       menu.choice('Add a Dr. Phil quote') do
         user_input = ask("Please type in your Dr. Phil quote.\n")
         response = quotes_controller.add(user_input)
-        say("\"#{user_input}\" has been added.\n") unless user_input.nil?
+        say(response) unless response.nil?
       end
       menu.choice('Add a Tiger Mom quote') do
         user_input = ask("Please type in your Tiger Mom quote.\n")
         response = quotes_controller.add(user_input)
-        say("\"#{user_input}\" has been added.\n") unless user_input.nil?
+        say(response) unless response.nil?
       end
       menu.choice('List all Dr. Phil quotes') do
         say(quotes_controller.index)

@@ -1,4 +1,4 @@
-require_relative '../test_helper'
+require_relative "../test_helper"
 
 describe QuotesController do
 
@@ -22,7 +22,7 @@ describe QuotesController do
 
     it "should not add quote all spaces" do
       quote_name = "        "
-      assert_raises(ArgumentError){ controller.add(quote_name) }
+      assert_raises(ArgumentError) { controller.add(quote_name) }
     end
 
     it "should only add quotes that make sense" do

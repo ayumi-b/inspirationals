@@ -1,4 +1,4 @@
-require 'highline/import'
+require "highline/import"
 
 class QuotesController
   def index
@@ -16,9 +16,11 @@ class QuotesController
 
   def add(name)
     name_cleaned = name.strip
-    unless /^\d+$/.match(name_cleaned)
-      Quote.create(name_cleaned)
-      name_cleaned
+    quote = Quote.new(name_cleaned)
+    if quote.save
+      "\"#{name}\" has been added.\n"
+    else
+      quote.errors
     end
   end
 end

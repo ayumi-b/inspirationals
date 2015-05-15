@@ -39,7 +39,6 @@ require_relative '../test_helper'
 #```
 
 class AddingNewQuoteTest < Minitest::Test
-
   def test_adding_a_quote
     shell_output = ""
     expected_output = manage_menu
@@ -60,21 +59,20 @@ class AddingNewQuoteTest < Minitest::Test
   end
 
   def test_sad_path_adding_a_quote
-    skip
     shell_output = ""
     expected_output = manage_menu
-    test_quote = "Cats are great"
+    happy_quote = "Cats are great"
     IO.popen('./inspirationals manage', 'r+') do |pipe|
       pipe.puts "2"
       expected_output << "Please type in your Tiger Mom quote.\n"
       pipe.puts ""
       expected_output << "\"\" is not a valid quote.\n"
       expected_output << "Please type in your Tiger Mom quote.\n"
-      pipe.puts test_quote
-      expected_output << "\"#{test_quote}\" has been added.\n"
+      pipe.puts happy_quote
+      expected_output << "\"#{happy_quote}\" has been added.\n"
       expected_output << manage_menu
       pipe.puts "3"
-      expected_output << "1. #{test_quote}"
+      expected_output << "1. #{happy_quote}\n"
       shell_output = pipe.read
       pipe.close_write
       pipe.close_read

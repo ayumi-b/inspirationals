@@ -30,3 +30,13 @@ def manage_menu
 5. Exit
 EOS
 end
+
+def actions_menu
+<<EOS
+Would you like to?
+1. Edit
+2. Delete
+3. Exit
+EOS
+end
+

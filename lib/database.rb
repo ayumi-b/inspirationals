@@ -6,7 +6,23 @@ class Database
     Database.execute <<-SQL
     CREATE TABLE IF NOT EXISTS quotes (
       id integer PRIMARY KEY AUTOINCREMENT,
-      name varchar(255) NOT NULL
+      name varchar(600) NOT NULL,
+      quote_type_id integer,
+      author_id integer,
+      FOREIGN KEY (quote_type_id) REFERENCES quote_types (id),
+      FOREIGN KEY (author_id) REFERENCES authors (id)
+    );
+    SQL
+    Database.execute <<-SQL
+    CREATE TABLE IF NOT EXISTS authors (
+      id integer PRIMARY KEY AUTOINCREMENT,
+      name varchar(200) NOT NULL
+    );
+    SQL
+    Database.execute <<-SQL
+    CREATE TABLE IF NOT EXISTS quote_types (
+      id integer PRIMARY KEY AUTOINCREMENT,
+      type varchar(200) NOT NULL
     );
     SQL
   end

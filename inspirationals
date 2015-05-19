@@ -13,7 +13,9 @@ menu_prompt =<<EOS
 5. Exit
 EOS
 
-if ARGV.size == 1 and ARGV[0] == "manage"
+if ARGV.empty?
+  SurveyController.new().quiz
+elsif ARGV.size == 1 and ARGV[0] == "manage"
   loop do
     choose do |menu|
       menu.prompt = ""

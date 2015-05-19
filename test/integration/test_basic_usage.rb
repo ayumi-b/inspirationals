@@ -2,10 +2,10 @@ require_relative '../test_helper'
 
 class TestBasicUsage < Minitest::Test
 
-  def test_gives_minimum_arguments
+  def test_manage_wrong_arguments
     shell_output = ""
     expected_output = ""
-    IO.popen('./inspirationals') do |pipe|
+    IO.popen('./inspirationals bob') do |pipe|
       expected_output = "[Help] Run as: ./inspirationals manage\n"
       shell_output = pipe.read
     end

@@ -22,31 +22,19 @@ elsif ARGV.size == 1 and ARGV[0] == "manage"
 
       quotes_controller = QuotesController.new
       menu.choice('Add a Dr. Phil quote') do
-        loop do
-          user_input = ask("Please type in your Dr. Phil quote.")
-          response = quotes_controller.add(user_input)
-          say(response) unless response.nil?
-          if /has\sbeen\sadded.$/.match(response)
-            break
-          end
-        end
+        say(quotes_controller.add_phil)
+        exit
       end
       menu.choice('Add a Tiger Mom quote') do
-        loop do
-          user_input = ask("Please type in your Tiger Mom quote.")
-          response = quotes_controller.add(user_input)
-          say(response) unless response.nil?
-          if /has\sbeen\sadded.$/.match(response)
-            break
-          end
-        end
+        say(quotes_controller.add_tiger)
+        exit
       end
       menu.choice('List all Dr. Phil quotes') do
-        say(quotes_controller.index)
+        say(quotes_controller.index_phil)
         exit
       end
       menu.choice('List all Tiger Mom quotes') do
-        say(quotes_controller.index)
+        say(quotes_controller.index_tiger)
         exit
       end
       menu.choice('Exit') do

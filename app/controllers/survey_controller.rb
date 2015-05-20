@@ -1,33 +1,39 @@
 require "highline/import"
 
+
 class SurveyController
 
-  def survey_menu
-<<EOS
-Welcome to inspirationals.  Choose one.
-1. I want to be inspired by Dr. Phil.
-2. I want to be inspired by Tiger Mom.
-EOS
-  end 
-
-  def type_menu
-<<EOS
-Select an inspiration that you need.
-1. Comfort
-2. Support
-3. Security
-4. A way out of a situation
-5. Decision
-6. Challenge
-EOS
+  def quiz
+    choose do |menu|
+      menu.header = "Welcome to Inspirationals.\n" + "Choose one.\n"
+      menu.choice("I want to be inspired by Dr. Phil.") { index}
+      menu.choice("I want to be inspired by Tiger Mom."){ tiger_mom}
+      menu.choice("Exit. I need rational thought.") do
+        exit
+      end
+    end
   end
-
-
+  
+  def dr_phil
+    if Quote.count > 0
+      quotes = Quote.all
+      choose do |menu|
+        menu.prompt = ""
+        quotes.each do |quote|
+          menu.choice(quote.name){ action_menu(quote)}
+        end
+        menu.choice("Exit")
+      end
+    else
+      say("there are no quotes found. Add a quote.\n")
+    end
+  end
 
   def index
     if Quote.count > 0
       quotes = Quote.all
       choose do |menu|
+        menu.header = "Which one would you like?"
         menu.prompt = ""
         quotes.each do |quote|
           menu.choice(quote.name){ action_menu(quote)}

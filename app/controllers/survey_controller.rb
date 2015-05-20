@@ -6,42 +6,60 @@ class SurveyController
   def quiz
     choose do |menu|
       menu.header = "Welcome to Inspirationals.\n" + "Choose one.\n"
-      menu.choice("I want to be inspired by Dr. Phil.") { index}
-      menu.choice("I want to be inspired by Tiger Mom."){ tiger_mom}
+      menu.choice("I want to be inspired by Dr. Phil.") { index_phil}
+      menu.choice("I want to be inspired by Tiger Mom."){ index }
       menu.choice("Exit. I need rational thought.") do
+        say("Very well.\n'Tomorrow's just a future yesterday.' --Craig Ferguson")
         exit
       end
     end
   end
-  
+
   def dr_phil
-    if Quote.count > 0
-      quotes = Quote.all
+    selected = Database.execute("SELECT name FROM quotes WHERE author_id = 1")
       choose do |menu|
-        menu.prompt = ""
-        quotes.each do |quote|
-          menu.choice(quote.name){ action_menu(quote)}
+        menu.header = "Here are some inspiring quotes by the great Dr. Phil.\n"
+        selected.each do |selected|
+        menu.choice(selected){ action_menu(selected)}
         end
-        menu.choice("Exit")
+        menu.choice("Exit") do
+        exit
       end
-    else
-      say("there are no quotes found. Add a quote.\n")
     end
   end
 
+  def index_phil
+    emotions = Database.execute("SELECT type FROM quote_types")
+       choose do |menu|
+         menu.header = "What sort of inspiration do you seek today?"
+       emotions.each do |emotions|
+         menu.choice(emotions) { dr_phil }
+       end
+       end
+  end
+
+
   def index
-    if Quote.count > 0
-      quotes = Quote.all
+    emotions = Database.execute("SELECT type FROM quote_types")
+       choose do |menu|
+         menu.header = "What sort of inspiration do you seek today?"
+       emotions.each do |emotions|
+         menu.choice(emotions) { tiger_mom}
+       end
+       end
+  end
+  
+  def tiger_mom
+    selected = Database.execute("SELECT name FROM quotes WHERE author_id == 2")
       choose do |menu|
-        menu.header = "Which one would you like?"
-        menu.prompt = ""
-        quotes.each do |quote|
-          menu.choice(quote.name){ action_menu(quote)}
+        menu.header = "Here are some inspiring quotes by the great Tiger Mom.\n"
+        selected.each do |selected|
+        menu.choice(selected){ action_menu(selected)}
         end
-        menu.choice("Exit")
-      end
-    else
-      say("there are no quotes found. Add a quote.\n")
+        menu.choice("Exit") do
+         say("get out!")
+          exit
+        end
     end
   end
 
@@ -58,16 +76,6 @@ class SurveyController
       menu.choice("Exit") do
         exit
       end
-    end
-  end
-
-  def add(name)
-    name_cleaned = name.strip
-    quote = Quote.new(name_cleaned)
-    if quote.save
-      "\"#{name}\" has been added.\n"
-    else
-      quote.errors
     end
   end
 end
